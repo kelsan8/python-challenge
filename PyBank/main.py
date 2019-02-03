@@ -56,3 +56,28 @@ with open(csvpath, newline = "") as csvfile:
         # Resets the value of the previous row's revenue value to use in the next calculation
         last_revenue = float(row[1])
 
+    # Calculate the average revenue and average change in revenue for the data
+    avg_revenue = net_revenue / num_months
+    avg_revenue_change = avg_revenue_change / num_months
+
+# Print the results to the terminal
+print("Financial Analysis")
+print("----------------------------")
+print(f'Total Months: {num_months}')
+print(f'Total Revenue: {net_revenue}')
+print(f'Average Change: {avg_revenue_change}')
+print(f'Greatest Increase in Profits: {greatest_inc_month} {greatest_inc_revenue}')
+print(f'Greatest Decrease in Profits: {greatest_dec_month} {greatest_dec_revenue}')
+
+# Create a new .txt file to print the results to
+output_path = os.path.join("..", "output", "mainoutput.txt")
+
+# Opens the newly made file in write mode and writes the results to it
+with open(output_path, 'w', newline = '') as writefile:
+    writefile.writelines("Financial Analysis \n")
+    writefile.writelines("---------------------------- \n")
+    writefile.writelines(f'Total Months: {num_months} \n')
+    writefile.writelines(f'Total Revenue: {net_revenue} \n')
+    writefile.writelines(f'Average Change: {avg_revenue_change} \n')
+    writefile.writelines(f'Greatest Increase in Profits: {greatest_inc_month} {greatest_inc_revenue} \n')
+    writefile.writelines(f'Greatest Decrease in Profits: {greatest_dec_month} {greatest_dec_revenue} \n')
