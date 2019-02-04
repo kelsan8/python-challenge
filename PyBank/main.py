@@ -22,8 +22,10 @@ with open(csvpath, newline = "") as csvfile:
     # Skips the header row
     header = next(csv_reader, None)
 
+    # Sets the row to read data from
     row = next(csv_reader, None)
 
+    # Sets variables that track the progress of the data reading
     row_revenue = int(row[1])
     last_revenue = int(row[1])
     greatest_inc_month = row[0]
@@ -51,10 +53,12 @@ with open(csvpath, newline = "") as csvfile:
         # Increments the number of months by 1 for each iteration
         num_months = num_months + 1
 
+        # Conditional statement to check revenue changes and determine greatest increase in revenue
         if row_revenue > greatest_inc_revenue:
             greatest_inc_month = row[0]
             greatest_inc_revenue = revenue_change
 
+        # Conditional statement to check revenue changes and determine greatest decrease in revenue
         if row_revenue < greatest_dec_revenue:
             greatest_dec_month = row[0]
             greatest_dec_revenue = revenue_change
