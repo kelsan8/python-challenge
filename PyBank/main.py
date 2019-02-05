@@ -81,10 +81,10 @@ print(f'Greatest Decrease in Profits: {greatest_dec_month} ${greatest_dec_revenu
 
 # Create a new .txt file to print the results to
 # output_path = os.path.join("..", "output", "mainoutput.txt")
-output_path = os.path.join("C:/Users/keber/Desktop/Data Science Boot Camp/Resources/pybank_output.txt")
+output_path = os.path.join("C:/Users/keber/Desktop/Data Science Boot Camp/python-challenge/pybank_output.txt")
 
 # Opens the newly made file in write mode and writes the results to it
-with open(output_path, 'w', newline = '') as writefile:
+with open(output_path, 'w') as writefile:
     writefile.writelines("Financial Analysis \n")
     writefile.writelines("---------------------------- \n")
     writefile.writelines(f'Total Months: {num_months} \n')
